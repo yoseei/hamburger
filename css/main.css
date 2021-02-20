@@ -9,18 +9,36 @@ h1 {
   margin: 0;
 }
 
+html, body, a {
+  cursor: none;
+}
+
+#cursor {
+  transform: translate(0, 0);
+  pointer-events: none;
+  position: fixed;
+  top: -4px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  background: #0f100e;
+  border-radius: 50%;
+  z-index: 999;
+  transition: width .3s, height .3s, top .3s, left .3s;
+}
+
 #stalker {
   pointer-events: none;
   position: fixed;
-  top: -8px;
-  left: -8px;
-  width: 16px;
-  height: 16px;
-  background: rgba(0, 0, 0, 0.5);
+  top: -15px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  background: rgba(244, 216, 4, 0.8);
   border-radius: 50%;
   transition: transform 0.2s, top, 0.5s, left 0.5s, width .5s, height .5s, background-color .5s;
   transition-timing-function: ease-out;
-  z-index: 999;
+  z-index: 998;
 }
 #stalker.hov_ {
   top: -32px;
@@ -28,7 +46,7 @@ h1 {
   width: 64px;
   height: 64px;
   transition: .5s;
-  background: rgba(255, 0, 0, 0.4);
+  background: rgba(244, 216, 4, 0.8);
 }
 
 .header-wrapper {
@@ -73,7 +91,7 @@ h1 {
 }
 
 .main-wrapper {
-  background-color: wheat;
+  background-color: #eee9e9;
   height: 1000px;
   padding: 115px 20px 20px;
 }
@@ -114,7 +132,7 @@ h1 {
     padding: 10px 25px;
   }
   .header-wrapper #ham-nav ul li a:hover {
-    background: tomato;
+    background: #47a0ff;
     color: white;
     transition: .5s;
   }
@@ -125,7 +143,7 @@ h1 {
     right: 20px;
     height: 44px;
     width: 50px;
-    cursor: pointer;
+    cursor: none;
     transition: 1s;
   }
   .header-wrapper #ham-line .inner-line {

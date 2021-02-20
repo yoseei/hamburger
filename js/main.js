@@ -10,6 +10,26 @@
   document.getElementById('ham-line').addEventListener('click', function() {
     hamburger();
   });
+
+  //準備
+  let cursorR = 4;  //カーソルの半径
+  const cursor = document.getElementById('cursor');  //カーソル用のdivを取得
+
+  //上記のdivタグをマウスに追従させる処理
+  document.addEventListener('mousemove', function (e) {
+      cursor.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
+  });
+
+  //リンクにホバー時はクラスをつける
+  const linkElem2 = document.querySelectorAll('a');
+  for (let i = 0; i < linkElem2.length; i++) {
+      linkElem2[i].addEventListener('mouseover', function (e) {
+          cursor.classList.add('hov_');
+      });
+      linkElem2[i].addEventListener('mouseout', function (e) {
+          cursor.classList.remove('hov_');      
+      });
+  }
   //マウスストーカー用のdivを取得
   const stalker = document.getElementById('stalker');
 
